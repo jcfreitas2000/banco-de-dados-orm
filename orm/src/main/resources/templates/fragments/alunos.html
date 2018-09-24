@@ -1,0 +1,68 @@
+<!--
+    Autor     : José Carlos de Freitas
+    Criado em : 24/09/2018, 18:25:10
+    Documento : alunos
+-->
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="">
+    </head>
+    <body>
+
+        <div th:fragment="exibirTodos">
+
+            <form th:action="@{/alunos/pesquisar}">
+                <div class="row">
+                <div class="form-group offset-sm-7 col-sm-5 offset-lg-9 col-lg-3">
+                    <label for="nome">Pesquisar pelo nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" th:value="${nome}" placeholder="Digite o nome do aluno">
+                </div>
+                </div>
+            </form>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Ações</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>RA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="aluno: ${alunos}">
+                        <td>
+                            <form th:action="@{/alunos/__${aluno.id}__/remover}" method="post">
+                                <a class="btn btn-primary" th:href="@{/alunos/__${aluno.id}__/editar}">Editar</a>
+                                <button class="btn btn-danger">Remover</button>
+                            </form>
+                        </td>
+                        <td th:text="${aluno.nome}"></td>
+                        <td th:text="${aluno.email}"></td>
+                        <td th:text="${aluno.ra}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div th:fragment="dados-gerais">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" th:field="*{nome}" placeholder="Digite o nome do aluno">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" th:field="*{email}" placeholder="email-do-aluno@email.com">
+            </div>
+            <div class="form-group">
+                <label for="ra">RA</label>
+                <input type="text" class="form-control" th:field="*{ra}" placeholder="Digite o RA do aluno">
+            </div>
+        </div>
+    </body>
+</html>

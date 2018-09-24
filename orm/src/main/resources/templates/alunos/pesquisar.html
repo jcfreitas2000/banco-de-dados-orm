@@ -1,0 +1,39 @@
+<!--
+    Autor     : José Carlos de Freitas
+    Criado em : 24/09/2018, 19:10:51
+    Documento : pesquisar
+-->
+
+<html layout:decorate="~{layout.html}" th:with="titulo=${'Pesquisar por nome'}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="Sistema exemplo de uso de ORM">
+
+    </head>
+    <body>
+
+        <main layout:fragment="main">
+            <section>
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h5">Pesquisar por nome <strong th:text="${nome}"></strong></h2>
+                        </div>
+                        <div class="card-body">
+
+                            <table th:replace="fragments/alunos :: exibirTodos"></table>
+
+                        </div>
+                        <div class="card-footer text-muted">
+                            <a class="btn btn-primary" th:href="@{/alunos/novo}">Novo aluno</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </body>
+</html>
+
