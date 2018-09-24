@@ -1,2 +1,2 @@
-# banco-de-dados-orm
-Exemplo de uso de banco de dados relacional e aplicações modernas!
+# Apresentação PPGCC - Banco de Dados
+Um exemplo de como utilizar banco de dados relacional para aplicações modernas
