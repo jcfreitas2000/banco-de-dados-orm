@@ -1,0 +1,21 @@
+/*
+    Autor     : José Carlos de Freitas
+    Criado em : 24/09/2018, 17:51:15
+    Documento : custom.css
+*/
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page > main {
+    padding: 3rem 0;
+    flex-grow: 1;
+}
+
+.page > footer {
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray);
+}

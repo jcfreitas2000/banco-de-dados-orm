@@ -1,0 +1,38 @@
+<!--
+    Autor     : José Carlos de Freitas
+    Criado em : 24/09/2018, 16:57:19
+    Documento : index
+-->
+
+<html layout:decorate="~{layout.html}" th:with="titulo=${'Página inicial'}">
+    <head>
+        <title>Exemplo ORM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="description" content="Sistema exemplo de uso de ORM">
+
+    </head>
+    <body>
+
+        <main layout:fragment="main">
+            <div class="container-fluid">
+                <section>
+                    <div class="card">
+                        <div class="card-header">
+                            <h1 class="h5">Sistema exemplo</h1>
+                        </div>
+                        <div class="card-body">
+                            Sistema feito para a apresentação de Banco de Dados NoSQL da disciplina de Banco de Dados
+                            do PPGCC (Programa de Pós-Graduação em Ciência da Computação)
+                        </div>
+                        <div class="card-footer text-muted">
+                            <a class="btn btn-primary" th:href="@{/alunos}">Gerenciar alunos</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+    </body>
+</html>
